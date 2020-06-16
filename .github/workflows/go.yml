@@ -24,9 +24,6 @@ jobs:
 
     - name: Get dependencies
       run: |
-        go get google.golang.org/protobuf/encoding/protojson
-        go get google.golang.org/protobuf/proto
-        go get gopkg.in/yaml.v3
         go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
             curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
@@ -58,7 +55,13 @@ jobs:
         go-version: ${{ matrix.go-version }}
     - name: Checkout code
       uses: actions/checkout@v2
-      
+    - name: Get dependencies
+      run: |
+        go get -v -t -d ./...
+        if [ -f Gopkg.toml ]; then
+            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+            dep ensure
+        fi
     - name: Run tests
       run: go test -v -covermode=count 
       
