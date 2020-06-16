@@ -26,7 +26,7 @@ const (
 // EncodingType format code
 type EncodingType int
 
-// EncodingTypeFromString Convert string JSON, Yaml, or any to EncodingType Code 
+// EncodingTypeFromString Convert string JSON, Yaml, or any to EncodingType Code
 func EncodingTypeFromString(str string) EncodingType {
 	switch strings.ToUpper(str) {
 	case "JSON":
