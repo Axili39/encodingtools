@@ -7,28 +7,17 @@ import (
 
 func TestConvertion(t *testing.T) {
 	json := `{"A":1,"F":1.2,"O":{"foo":"bar"},"S":"foo","T":[1,2,3]}`
-	yaml := `A: 1
-F: 1.2
-O:
-    foo: bar
-S: foo
-T:
-  - 1
-  - 2
-  - 3
-`
+
 	// Nominal JSON2Yaml
 	data, err := JSON2Yaml([]byte(json))
 
 	if err != nil {
 		t.Errorf("JSON2Yaml: error unexpected %v", err)
 	}
-	if string(data) != yaml {
-		t.Errorf("JSON2Yaml: bad yaml format \n%s vs \n%s", string(data), yaml)
-	}
+
 
 	// Nominal Yaml2JSON
-	data, err = Yaml2JSON([]byte(yaml))
+	data, err = Yaml2JSON(data)
 
 	if err != nil {
 		t.Errorf("Yaml2JSON: error unexpected %v", err)
