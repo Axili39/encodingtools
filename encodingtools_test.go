@@ -15,7 +15,6 @@ func TestConvertion(t *testing.T) {
 		t.Errorf("JSON2Yaml: error unexpected %v", err)
 	}
 
-
 	// Nominal Yaml2JSON
 	data, err = Yaml2JSON(data)
 
