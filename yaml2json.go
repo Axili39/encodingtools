@@ -28,7 +28,7 @@ func y2jConvert(i interface{}) interface{} {
 	return i
 }
 
-// Yaml2Json : credits : stackoverflow ;)
+// Yaml2JSON : Convert Yaml byte array to Json (credits : stackoverflow ;) )
 func Yaml2JSON(buf []byte) ([]byte, error) {
 	var body interface{}
 	if err := yaml.Unmarshal(buf, &body); err != nil {

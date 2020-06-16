@@ -39,7 +39,7 @@ func j2yConvert(i interface{}) interface{} {
 	}
 }
 
-// Json2Yaml Convert any JSON formatted data-block to YAML data-block
+// JSON2Yaml Convert any JSON formatted data-block to YAML data-block
 func JSON2Yaml(buf []byte) ([]byte, error) {
 	var body interface{}
 	if err := json.Unmarshal(buf, &body); err != nil {

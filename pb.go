@@ -13,13 +13,20 @@ import (
 )
 
 const (
+	// EncodingTypeJSON : JSON format
 	EncodingTypeJSON EncodingType = iota
+
+	// EncodingTypeYaml : Yaml format
 	EncodingTypeYaml
+
+	// EncodingTypeBinaryPB : Protocol buffer binary encoded format
 	EncodingTypeBinaryPB
 )
 
+// EncodingType format code
 type EncodingType int
 
+// EncodingTypeFromString Convert string JSON, Yaml, or any to EncodingType Code 
 func EncodingTypeFromString(str string) EncodingType {
 	switch strings.ToUpper(str) {
 	case "JSON":
@@ -33,7 +40,7 @@ func EncodingTypeFromString(str string) EncodingType {
 	}
 }
 
-//data2Object Convert object which has proto, json, yaml interface to data
+//Bytes2Object Convert object which has proto, json, yaml interface to data
 func Bytes2Object(obj proto.Message, data []byte, intype EncodingType) error {
 	var err error
 	switch intype {
@@ -54,7 +61,7 @@ func Bytes2Object(obj proto.Message, data []byte, intype EncodingType) error {
 	return err
 }
 
-// objet2Data
+// Objet2Bytes marshal an object from type proto.Message to byte array depending on EncodingType code
 func Objet2Bytes(obj proto.Message, outtype EncodingType) ([]byte, error) {
 	switch outtype {
 	case EncodingTypeJSON:
