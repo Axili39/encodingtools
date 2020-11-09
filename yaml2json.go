@@ -9,7 +9,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-//YAML to JSON Converter
+// YAML to JSON Converter
 
 // y2jConvert : internal function used by yaml2Json
 func y2jConvert(i interface{}) interface{} {
