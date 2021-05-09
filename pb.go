@@ -65,7 +65,7 @@ func Bytes2Object(obj proto.Message, data []byte, intype EncodingType) error {
 func Objet2Bytes(obj proto.Message, outtype EncodingType) ([]byte, error) {
 	switch outtype {
 	case EncodingTypeJSON:
-		marshaller := protojson.MarshalOptions{ EmitUnpopulated: true}
+		marshaller := protojson.MarshalOptions{EmitUnpopulated: true}
 		return marshaller.Marshal(obj)
 	case EncodingTypeYaml:
 		data, err := protojson.Marshal(obj)
