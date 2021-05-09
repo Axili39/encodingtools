@@ -40,7 +40,7 @@ func EncodingTypeFromString(str string) EncodingType {
 	}
 }
 
-//Bytes2Object Convert object which has proto, json, yaml interface to data
+// Bytes2Object Convert object which has proto, json, yaml interface to data
 func Bytes2Object(obj proto.Message, data []byte, intype EncodingType) error {
 	var err error
 	switch intype {

@@ -12,8 +12,8 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-//JSON to YAML Converter
-//j2yConvert : internal function, used by json2Yaml
+// JSON to YAML Converter
+// j2yConvert : internal function, used by json2Yaml
 func j2yConvert(i interface{}) interface{} {
 	switch x := i.(type) {
 	case map[string]interface{}:
